@@ -1,10 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Experience from "./Experience.jsx";
+import Experience from "./Experience/Experience.jsx";
 import NewApp from "./NewApp.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -24,9 +22,6 @@ createRoot(document.getElementById("root")).render(
         <Experience />
       </Canvas>
     </div>
-
-    {/* <App /> */}
-
     <NewApp className="" />
   </StrictMode>
 );

@@ -40,12 +40,12 @@ const Experience = () => {
           object={rocket.scene}
           scale={0.4}
           position-x={100}
-          position={[-1, 1, 0]}
+          position={[0, 1, 0]}
           rotation-z={Math.PI * -0.35}
         ></primitive>
       </Float>
       <Float speed={0.1}>
-        <mesh ref={moonRef} scale={5} position={[11, 6, -5]}>
+        <mesh ref={moonRef} scale={5} position={[12, 8, -5]}>
           <sphereGeometry />
           <meshPhysicalMaterial
             map={texture}

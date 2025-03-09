@@ -45,7 +45,7 @@ const NewApp = () => {
       <Navbar />
 
       <header className="">
-        <ul className="text-sm sm:text-lg mt-10 sm:mt-20 font-title flex justify-between md:flex-col gap-2">
+        <ul className="text-sm sm:text-lg mt-10 sm:mt-20 font-title flex justify-between sm:flex-col gap-2">
           <li ref={skill1} className="skill">
             FRONTEND
           </li>

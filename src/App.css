@@ -33,13 +33,12 @@ h1 {
   top: 50%;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 640px) {
   .skill::before {
     position: relative;
     content: "";
     width: auto;
     height: auto;
-    /* background-color: white; */
     background-color: transparent;
     left: calc((164 / 1440) * -100vw);
     top: 50%;
