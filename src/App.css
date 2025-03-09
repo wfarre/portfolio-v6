@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-title: "Audiowide", sans-serif;
+}
+
+header {
+  margin: 0 calc((164 / 1440) * 100vw);
+}
+
+.title-wrapper {
+  margin-top: calc((400 / 1024) * 100vh);
+}
+
+h1 {
+  font-size: calc((116 / 1440) * 100vw);
+  /* letter-spacing: calc((18 / 1440) * 100vw); */
+}
+
+.skill {
+  position: relative;
+}
+
+.skill::before {
+  position: absolute;
+  content: "";
+  width: calc((150 / 1440) * 100vw);
+  height: 1px;
+  background-color: white;
+  left: calc((164 / 1440) * -100vw);
+  top: 50%;
+}
+
+@media all and (max-width: 600px) {
+  .skill::before {
+    position: relative;
+    content: "";
+    width: auto;
+    height: auto;
+    /* background-color: white; */
+    background-color: transparent;
+    left: calc((164 / 1440) * -100vw);
+    top: 50%;
+  }
+}
