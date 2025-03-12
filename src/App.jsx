@@ -1,99 +1,86 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
+import Navbar from "./components/Navbar";
 import "./App.css";
-import Arrow from "./assets/arrow.svg";
 import Sns from "./components/Sns";
-
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import About from "./About";
 
-function App() {
-  gsap.registerPlugin(useGSAP);
-  const design = useRef();
-  const arrow = useRef();
-  const websites = useRef();
+const App = () => {
+  const skill1 = useRef();
+  const skill2 = useRef();
+  const skill3 = useRef();
+  const mainTitleRef = useRef();
+  const headerFooterRef = useRef();
 
-  // useGSAP(() => {
-  //   gsap.from(design.current, {
-  //     opacity: 0,
-  //     duration: 2,
-  //   });
-
-  //   gsap.from(arrow.current, {
-  //     scaleX: 0,
-  //     x: -300,
-  //     rotateX: 180,
-  //     duration: 1,
-  //     delay: 0.2,
-  //   });
-
-  //   gsap.from(websites.current, {
-  //     x: -200,
-  //     opacity: 0,
-  //     duration: 1,
-  //     delay: 0.3,
-  //   });
-  // });
+  useGSAP(() => {
+    gsap.from(skill1.current, { opacity: 0, y: -16, duration: 0.9 });
+    gsap.from(skill2.current, {
+      opacity: 0,
+      y: -16,
+      duration: 0.9,
+      delay: 0.3,
+    });
+    gsap.from(skill3.current, {
+      opacity: 0,
+      y: -16,
+      duration: 0.9,
+      delay: 0.6,
+    });
+    gsap.from(mainTitleRef.current, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.9,
+      delay: 0.9,
+    });
+    gsap.from(headerFooterRef.current, {
+      y: 16,
+      opacity: 0,
+      duration: 0.9,
+      delay: 0.6,
+    });
+  });
 
   return (
-    <>
-      <nav>
-        <ul className="flex gap-5 md:gap-8 justify-center mt-6 md:mt-20">
-          <li>
-            <a className=" cursor-pointer">Home</a>
+    <div className="text-white relative min-h-full">
+      <Navbar />
+
+      <header className="header">
+        <ul className="text-sm sm:text-lg mt-25 sm:mt-20 font-title flex justify-between sm:flex-col gap-2">
+          <li ref={skill1} className="skill">
+            FRONTEND
           </li>
-          <li>
-            <a className=" cursor-pointer">About</a>
+          <li ref={skill2} className="skill">
+            BACKEND
           </li>
-          <li>
-            <a className=" cursor-pointer">Portfolio</a>
-          </li>
-          <li>
-            <a className=" cursor-pointer">Contact</a>
+          <li ref={skill3} className="skill">
+            UI/UX
           </li>
         </ul>
-      </nav>
-      <header className="mt-20 md:mt-32 flex justify-center">
-        <div className="">
-          <p className="text-center md:text-left mb-4 md:mb-0">
-            HI THERE! 👋 I’M WILLIAM,
-            <br /> A FRONTEND DEVELOPER TURNING
-          </p>
-
-          <div className="flex flex-col">
-            <h1
-              ref={design}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold"
-            >
-              DESIGNS
-            </h1>
-            <div className="relative flex items-center md:bottom-[75px] lg:bottom-[100px]">
-              <div className="relative flex items-center justify-center w-full md:w-[400px] lg:w-[540px] aspect-[590/251]">
-                <p className="absolute hidden md:block text-white z-50 text-3xl uppercase">
-                  into
-                </p>
-                <img
-                  className="arrow absolute left-0 top-0 w-full h-full "
-                  src={Arrow}
-                  ref={arrow}
-                />
-              </div>
-              <h1
-                ref={websites}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold"
-              >
-                WEBSITES
-              </h1>
-            </div>
+        <div className="text-center title-wrapper relative">
+          <h1
+            ref={mainTitleRef}
+            className="text-white tracking-wide uppercase font-title"
+          >
+            William Farre
+          </h1>
+          <div
+            ref={headerFooterRef}
+            className="flex-col flex sm:flex-row items-center justify-between flex-wrap"
+          >
+            <p className="text-sm sm:text-lg font-title mb-4 sm:mb-0">
+              FRONTEND DEVELOPER
+            </p>
+            <Sns />
           </div>
-          <Sns />
-
-          <button className="cursor-pointer block mt-12 bg-black text-white uppercase text-base  md:text-2xl md:w-[280px] h-12 md:h-16 rounded-[20px] w-[140px] mx-auto md:mr-0 font-bold">
-            Contact me
-          </button>
         </div>
       </header>
-    </>
+
+      <main>
+        <About />
+      </main>
+    </div>
   );
-}
+};
 
 export default App;
