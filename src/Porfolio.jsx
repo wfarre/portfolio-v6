@@ -135,7 +135,7 @@ const Porfolio = () => {
   });
   return (
     <section className="relative mt-100 min-h-[100vh] bg-slate-950">
-      <header className="mb-10 inline-flex w-full justify-center">
+      <header className="mb-10 inline-flex w-full justify-center overflow-y-hidden">
         <h2 ref={sectionHeaderText} className="text-2xl italic lg:text-3xl">
           <span ref={sectionTitleBefore}>Feel free to check some frontend</span>{" "}
           <span ref={sectionTitle} className="font-title uppercase not-italic">
