@@ -1,8 +1,4 @@
 import React, { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-
-import Flag from "./Experience/Flag";
-
 import Fisheye from "./assets/projects/fisheye.png";
 import ECommerce from "./assets/projects/ecommerce.png";
 import Kasa from "./assets/projects/kasa.png";
@@ -100,6 +96,7 @@ const Porfolio = () => {
   const sectionTitle = useRef();
   const sectionTitleBefore = useRef();
   const sectionTitleAfter = useRef();
+  const sectionMain = useRef();
 
   useGSAP(() => {
     const timeline = gsap.timeline({
@@ -119,31 +116,35 @@ const Porfolio = () => {
         duration: 2,
       })
       .to([sectionTitleBefore.current, sectionTitleAfter.current], {
-        delay: 1,
+        delay: 2,
         opacity: 0,
         duration: 2,
       })
+      .to([sectionTitleBefore.current, sectionTitleAfter.current], {
+        scale: 0,
+      })
       .to(sectionHeaderText.current, {
-        x: "50%",
-        duration: 1,
+        x: () => innerWidth / 2 - 400,
+        duration: 2,
         justifyItems: "flex-end",
+      })
+      .from(sectionMain.current, {
+        opacity: 0,
+        duration: 3,
       });
   });
   return (
     <section className="relative mt-100 min-h-[100vh] bg-slate-950">
       <header className="mb-10 inline-flex w-full justify-center">
-        <p ref={sectionHeaderText} className="text-2xl italic lg:text-3xl">
+        <h2 ref={sectionHeaderText} className="text-2xl italic lg:text-3xl">
           <span ref={sectionTitleBefore}>Feel free to check some frontend</span>{" "}
           <span ref={sectionTitle} className="font-title uppercase not-italic">
             projects
           </span>{" "}
-          <span ref={sectionTitleAfter}>I built.</span>{" "}
-        </p>
-        {/* <h2 className="font-title pt-10 text-right text-6xl">
-          Recent projects
-        </h2> */}
+          <span ref={sectionTitleAfter}>I built.</span>
+        </h2>
       </header>
-      <ul className="flex flex-col px-4">
+      <ul ref={sectionMain} className="flex flex-col px-4">
         {projects.map((project, index) => {
           return (
             <ProjectCard
