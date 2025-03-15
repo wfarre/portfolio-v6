@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   css,
   github,
@@ -26,6 +26,7 @@ import SkillCard from "./components/SkillCard";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const skills = [
   {
@@ -137,21 +138,25 @@ const skills = [
 ];
 
 gsap.registerPlugin(Flip);
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const [isGrid, setIsGrid] = useState(false);
   const grid = useRef();
   const aboutHeader = useRef();
-
-  //   const flexToGrid = () => {
-  //     const grid = document.getElementById("grid");
-  //     grid.classList.add("md:grid");
-  //     grid.classList.remove("flex");
-  //   };
-
-  useEffect(() => {
-    setIsGrid(true);
+  const section = useRef();
+  console.log(isGrid);
+  useState(() => {
+    setIsGrid(false);
   }, []);
+
+  ScrollTrigger.create({
+    trigger: "#aboutSection",
+    start: "top center",
+    onEnter: () => setIsGrid(true),
+    onLeaveBack: () => setIsGrid(false),
+    markers: true,
+  });
 
   useGSAP(() => {
     const state = Flip.getState(".item");
@@ -159,13 +164,17 @@ const About = () => {
     Flip.from(state, {
       absolute: true, // uses position: absolute during the flip to work around flexbox challenges
       duration: 1,
-      stagger: 0.1,
+      stagger: 0.5,
       ease: "power1.Out",
-      // you can use any other tweening properties here too, like onComplete, onUpdate, delay, etc.
     });
   }, [isGrid]);
+
   return (
-    <section className="flex justify-center items-center min-h-[100vh] bg-slate-950 px-desktop-responsive mt-50 py-50">
+    <section
+      id="aboutSection"
+      ref={section}
+      className="about-section flex justify-center items-center min-h-[100vh] bg-slate-950 px-desktop-responsive mt-50 py-50"
+    >
       <div
         id="grid"
         ref={grid}
@@ -173,12 +182,14 @@ const About = () => {
           isGrid && "md:grid"
         }`}
       >
-        {/* <div className="grid grid-rows-subgrid"> */}
         <header
+          id="headerAbout"
           ref={aboutHeader}
-          className="bg-white text-slate-950 px-12  py-13 rounded-2xl col-span-5 row-span-6 text-center md:text-left"
+          className="aboutHeader bg-white text-slate-950 px-12  py-13 rounded-2xl col-span-5 row-span-6 text-center md:text-left item"
         >
-          <h2 className="font-title text-5xl mb-3">About</h2>
+          <h2 id="section-title" className="font-title text-5xl mb-3">
+            About
+          </h2>
           <p>Hi there 👋,</p>
           <p className="mb-11">
             I am a French web developer currently based in Taiwan. Originally

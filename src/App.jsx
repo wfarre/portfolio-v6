@@ -5,6 +5,7 @@ import Sns from "./components/Sns";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import About from "./About";
+import Porfolio from "./Porfolio";
 
 const App = () => {
   const skill1 = useRef();
@@ -77,7 +78,8 @@ const App = () => {
       </header>
 
       <main>
-        <About />
+        {/* <About /> */}
+        <Porfolio />
       </main>
     </div>
   );
