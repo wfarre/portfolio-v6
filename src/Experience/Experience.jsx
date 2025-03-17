@@ -1,73 +1,15 @@
-import {
-  Float,
-  OrbitControls,
-  Point,
-  PointMaterial,
-  PointMaterialImpl,
-  Points,
-  Sparkles,
-  useGLTF,
-  useTexture,
-} from "@react-three/drei";
+import { Float, Sparkles, useGLTF, useTexture } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import React, { useEffect, useRef, useState } from "react";
-import { Camera, HemisphereLight, MeshPhysicalMaterial } from "three";
-
-// const useResize = () => {
-//   const [sizes, setSizes] = useState({
-//     width: 0,
-//     height: 0,
-//   });
-
-//   useEffect(() => {
-//     window.addEventListener("resize", () => {
-//       setSizes({ width: window.innerWidth, height: window.innerHeight });
-//     });
-//   });
-// };
-
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
-export const useCursor = () => {
-  const [cursor, setCursor] = useState({
-    x: 0,
-    y: 0,
-  });
-
-  const [sizes, setSizes] = useState(getWindowDimensions());
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setSizes({ width: window.innerWidth, height: window.innerHeight });
-    });
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
-      setCursor({
-        x: e.clientX / sizes.width - 0.5,
-        y: e.clientY / sizes.height - 0.5,
-      });
-    });
-  }, [sizes]);
-
-  return [cursor, sizes];
-};
+import React, { useRef } from "react";
+import { useCursor } from "../libs/hooks/useCursor";
 
 const Experience = () => {
-  const texture = useTexture("/moon/textures/white_plaster_02_diff_1k.jpg");
+  const texture = useTexture("/moon2/textures/rock_boulder_dry_diff_1k.jpg");
+
   const rocket = useGLTF("/rocket/scene.gltf");
   const particlesCount = 200;
   const positions = new Float32Array(particlesCount * 3);
   const [cursor, sizes] = useCursor();
-  console.log(cursor);
-  console.log(sizes);
 
   for (let i = 0; i < particlesCount; i++) {
     const index = i * 3;

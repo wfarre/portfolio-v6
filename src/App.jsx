@@ -43,11 +43,11 @@ const App = () => {
   });
 
   return (
-    <div className="text-white relative min-h-full">
+    <div className="relative min-h-full scroll-smooth text-white">
       <Navbar />
 
       <header className="header">
-        <ul className="text-sm sm:text-lg mt-25 sm:mt-20 font-title flex justify-between sm:flex-col gap-2">
+        <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
           <li ref={skill1} className="skill">
             FRONTEND
           </li>
@@ -58,18 +58,18 @@ const App = () => {
             UI/UX
           </li>
         </ul>
-        <div className="text-center title-wrapper relative">
+        <div className="title-wrapper relative text-center">
           <h1
             ref={mainTitleRef}
-            className="text-white tracking-wide uppercase font-title"
+            className="font-title tracking-wide text-white uppercase"
           >
             William Farre
           </h1>
           <div
             ref={headerFooterRef}
-            className="flex-col flex sm:flex-row items-center justify-between flex-wrap"
+            className="flex flex-col flex-wrap items-center justify-between sm:flex-row"
           >
-            <p className="text-sm sm:text-lg font-title mb-4 sm:mb-0">
+            <p className="font-title mb-4 text-sm sm:mb-0 sm:text-lg">
               FRONTEND DEVELOPER
             </p>
             <Sns />
@@ -78,7 +78,7 @@ const App = () => {
       </header>
 
       <main>
-        {/* <About /> */}
+        <About />
         <Porfolio />
       </main>
     </div>

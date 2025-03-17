@@ -97,6 +97,12 @@ const Porfolio = () => {
   const sectionTitleBefore = useRef();
   const sectionTitleAfter = useRef();
   const sectionMain = useRef();
+  const sectionHeader = useRef();
+
+  // ScrollSmoother.create({
+  //   effects: true,
+  //   smooth: 2,
+  // });
 
   useGSAP(() => {
     const timeline = gsap.timeline({
@@ -106,7 +112,7 @@ const Porfolio = () => {
         start: "top center",
         end: "+=1000",
         markers: true,
-        scrub: 1,
+        scrub: true,
       },
     });
     timeline
@@ -135,9 +141,12 @@ const Porfolio = () => {
   });
   return (
     <section className="relative mt-100 min-h-[100vh] bg-slate-950">
-      <header className="mb-10 inline-flex w-full justify-center overflow-y-hidden">
+      <header
+        ref={sectionHeader}
+        className="mb-10 inline-flex w-full justify-center overflow-y-hidden"
+      >
         <h2 ref={sectionHeaderText} className="text-2xl italic lg:text-3xl">
-          <span ref={sectionTitleBefore}>Feel free to check some frontend</span>{" "}
+          <span ref={sectionTitleBefore}>Check out some frontend</span>{" "}
           <span ref={sectionTitle} className="font-title uppercase not-italic">
             projects
           </span>{" "}

@@ -141,53 +141,146 @@ gsap.registerPlugin(Flip);
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
   const grid = useRef();
-  const aboutHeader = useRef();
+  // const aboutHeader = useRef();
   const section = useRef();
+
+  const sectionIntroText = useRef();
+  const sectionIntroTextWrapper = useRef();
+
+  const skillCard0 = useRef();
+  const skillCard1 = useRef();
+  const skillCard2 = useRef();
+  const skillCard3 = useRef();
+  const skillCard4 = useRef();
+
   console.log(isGrid);
   useState(() => {
     setIsGrid(false);
   }, []);
 
-  ScrollTrigger.create({
-    trigger: "#aboutSection",
-    start: "top center",
-    onEnter: () => setIsGrid(true),
-    onLeaveBack: () => setIsGrid(false),
-    markers: true,
-  });
+  // ScrollTrigger.create({
+  //   trigger: uselessDiv.current,
+  //   start: "top center",
+  //   onEnter: () => setIsGrid(true),
+  //   onLeaveBack: () => setIsGrid(false),
+  //   markers: true,
+  // });
 
   useGSAP(() => {
-    const state = Flip.getState(".item");
-
-    Flip.from(state, {
-      absolute: true, // uses position: absolute during the flip to work around flexbox challenges
-      duration: 1,
-      stagger: 0.5,
-      ease: "power1.Out",
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: section.current,
+        pin: true,
+        pinSpacing: false,
+        start: "50% center",
+        end: "+=150%",
+        toggleActions: "restart pause pause pause",
+        scrub: 0.5,
+        markers: true,
+        // snap: true,
+      },
     });
-  }, [isGrid]);
+
+    timeline
+      .timeScale(0.2)
+      .from(sectionIntroText.current, {
+        x: -1500,
+      })
+      .to(sectionIntroText.current, {
+        scale: 10,
+        opacity: 0,
+      })
+      .to(
+        [
+          skillCard0.current,
+          skillCard1.current,
+          skillCard2.current,
+          skillCard3.current,
+          skillCard4.current,
+        ],
+        {
+          opacity: 1,
+          autoAlpha: 1,
+          backgroundColor: "white",
+          duration: 2,
+
+          // clearProps: "all",
+          // stagger: 0.5,
+        },
+      )
+      .to(
+        [
+          skillCard0.current,
+          skillCard1.current,
+          skillCard2.current,
+          skillCard3.current,
+          skillCard4.current,
+        ],
+        {
+          opacity: 0,
+          // autoAlpha: 1,
+          // backgroundColor: "white",
+          // clearProps: "all",
+          // stagger: 0.5,
+          duration: 0.5,
+        },
+      );
+
+    // Flip.from(state, {
+    //   absolute: true, // uses position: absolute during the flip to work around flexbox challenges
+    //   duration: 1,
+    //   stagger: 0.5,
+    //   ease: "power1.Out",
+    // });
+  }, []);
+
+  // useGSAP(() => {
+  //   const state = Flip.getState(".item");
+
+  //   Flip.from(state, {
+  //     absolute: true, // uses position: absolute during the flip to work around flexbox challenges
+  //     duration: 1,
+  //     stagger: 0.5,
+  //     ease: "power1.Out",
+  //   });
+  // }, [isGrid]);
 
   return (
     <section
       id="aboutSection"
       ref={section}
-      className="about-section flex justify-center items-center min-h-[100vh] bg-slate-950 px-desktop-responsive mt-50 py-50"
+      className="about-section px-desktop-responsive relative flex min-h-[100vh] flex-col items-center justify-center bg-slate-950 py-20"
     >
+      <div
+        className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-slate-950"
+        ref={sectionIntroTextWrapper}
+      >
+        <p ref={sectionIntroText} className="text-5xl italic">
+          A little bit about me and my skills...
+        </p>
+      </div>
+
+      {/* <div
+        id="grid"
+        ref={grid}
+        className={`mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 ${
+          isGrid && "md:grid"
+        }`}
+      > */}
+
       <div
         id="grid"
         ref={grid}
-        className={`flex flex-col grid-cols-8 grid-rows-12 gap-4 ${
-          isGrid && "md:grid"
-        }`}
+        className={`} mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 md:grid`}
       >
         <header
+          ref={skillCard0}
           id="headerAbout"
-          ref={aboutHeader}
-          className="aboutHeader bg-white text-slate-950 px-12  py-13 rounded-2xl col-span-5 row-span-6 text-center md:text-left item"
+          className="aboutHeader item col-span-5 row-span-6 rounded-2xl bg-white px-12 py-13 text-center text-slate-950 opacity-0 md:text-left"
         >
-          <h2 id="section-title" className="font-title text-5xl mb-3">
+          <h2 id="section-title" className="font-title mb-3 text-5xl">
             About
           </h2>
           <p>Hi there 👋,</p>
@@ -196,27 +289,31 @@ const About = () => {
             specialized in frontend developer, I am currently learning backend
             development and UI/UX design.
           </p>
-          <button className="px-6 py-3 bg-slate-950 text-white rounded-lg border border-slate-950 hover:text-slate-950 hover:bg-white  font-title uppercase">
+          <button className="font-title rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 text-white uppercase hover:bg-white hover:text-slate-950">
             Download CV
           </button>
         </header>
 
         <SkillCard
+          ref={skillCard1}
           title={"I use"}
           list={skills[0].list}
           gridPos={"col-span-3 row-start-1 col-start-6 row-span-3 item"}
         />
         <SkillCard
+          ref={skillCard2}
           title={"I speak"}
           list={skills[1].list}
           gridPos={"col-start-6 row-start-4 col-span-3 row-span-3 item"}
         />
         <SkillCard
+          ref={skillCard3}
           title={"frontend"}
           list={skills[2].list}
           gridPos={"col-span-4 row-span-3 item"}
         />
         <SkillCard
+          ref={skillCard4}
           title={"backend"}
           list={skills[3].list}
           gridPos={"col-span-4 row-span-3 item"}
