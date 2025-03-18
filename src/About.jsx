@@ -27,6 +27,7 @@ import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Button from "./components/Button";
 
 const skills = [
   {
@@ -145,6 +146,7 @@ const About = () => {
   const grid = useRef();
   // const aboutHeader = useRef();
   const section = useRef();
+  const oletter = useRef();
 
   const sectionIntroText = useRef();
   const sectionIntroTextWrapper = useRef();
@@ -173,13 +175,12 @@ const About = () => {
       scrollTrigger: {
         trigger: section.current,
         pin: true,
-        pinSpacing: false,
+        pinSpacing: 0,
         start: "50% center",
-        end: "+=150%",
+        end: "200% center",
         toggleActions: "restart pause pause pause",
         scrub: 0.5,
         markers: true,
-        // snap: true,
       },
     });
 
@@ -189,7 +190,8 @@ const About = () => {
         x: -1500,
       })
       .to(sectionIntroText.current, {
-        scale: 10,
+        delay: 2,
+        scale: 100,
         opacity: 0,
       })
       .to(
@@ -204,10 +206,10 @@ const About = () => {
           opacity: 1,
           autoAlpha: 1,
           backgroundColor: "white",
-          duration: 2,
+          duration: 5,
 
-          // clearProps: "all",
-          // stagger: 0.5,
+          clearProps: "all",
+          stagger: 0.5,
         },
       )
       .to(
@@ -225,6 +227,7 @@ const About = () => {
           // clearProps: "all",
           // stagger: 0.5,
           duration: 0.5,
+          stagger: 0.2,
         },
       );
 
@@ -254,7 +257,7 @@ const About = () => {
       className="about-section px-desktop-responsive relative flex min-h-[100vh] flex-col items-center justify-center bg-slate-950 py-20"
     >
       <div
-        className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-slate-950"
+        className="absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-x-hidden bg-slate-950"
         ref={sectionIntroTextWrapper}
       >
         <p ref={sectionIntroText} className="text-5xl italic">
@@ -273,7 +276,7 @@ const About = () => {
       <div
         id="grid"
         ref={grid}
-        className={`} mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 md:grid`}
+        className={`mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 bg-white md:grid`}
       >
         <header
           ref={skillCard0}
@@ -289,9 +292,7 @@ const About = () => {
             specialized in frontend developer, I am currently learning backend
             development and UI/UX design.
           </p>
-          <button className="font-title rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 text-white uppercase hover:bg-white hover:text-slate-950">
-            Download CV
-          </button>
+          <Button buttonText={"Dowload CV"} type={"primary"} />
         </header>
 
         <SkillCard

@@ -140,12 +140,12 @@ const Porfolio = () => {
       });
   });
   return (
-    <section className="relative mt-100 min-h-[100vh] bg-slate-950">
+    <section className="relative min-h-[100vh] bg-slate-950 pb-40">
       <header
         ref={sectionHeader}
-        className="mb-10 inline-flex w-full justify-center overflow-y-hidden"
+        className="px-desktop-responsive mb-10 inline-flex w-full justify-center overflow-y-hidden"
       >
-        <h2 ref={sectionHeaderText} className="text-2xl italic lg:text-3xl">
+        <h2 ref={sectionHeaderText} className="text-2xl italic lg:text-5xl">
           <span ref={sectionTitleBefore}>Check out some frontend</span>{" "}
           <span ref={sectionTitle} className="font-title uppercase not-italic">
             projects
@@ -163,6 +163,7 @@ const Porfolio = () => {
               company={project.company}
               date={project.date}
               stack={project.stack}
+              index={index}
             />
           );
         })}

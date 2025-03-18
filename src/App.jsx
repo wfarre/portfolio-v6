@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import Sns from "./components/Sns";
@@ -6,6 +6,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import About from "./About";
 import Porfolio from "./Porfolio";
+import Contact from "./Contact";
+import { ReactLenis } from "lenis/react";
 
 const App = () => {
   const skill1 = useRef();
@@ -13,6 +15,20 @@ const App = () => {
   const skill3 = useRef();
   const mainTitleRef = useRef();
   const headerFooterRef = useRef();
+  // const lenis = useLenis({ scroll }) => {
+  //   // called every scroll
+  // };
+  const lenisRef = useRef();
+
+  useEffect(() => {
+    function update(time) {
+      lenisRef.current?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+
+    return () => gsap.ticker.remove(update);
+  }, []);
 
   useGSAP(() => {
     gsap.from(skill1.current, { opacity: 0, y: -16, duration: 0.9 });
@@ -43,45 +59,48 @@ const App = () => {
   });
 
   return (
-    <div className="relative min-h-full scroll-smooth text-white">
-      <Navbar />
+    <ReactLenis root>
+      <div className="relative min-h-full scroll-smooth text-white">
+        <Navbar />
 
-      <header className="header">
-        <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
-          <li ref={skill1} className="skill">
-            FRONTEND
-          </li>
-          <li ref={skill2} className="skill">
-            BACKEND
-          </li>
-          <li ref={skill3} className="skill">
-            UI/UX
-          </li>
-        </ul>
-        <div className="title-wrapper relative text-center">
-          <h1
-            ref={mainTitleRef}
-            className="font-title tracking-wide text-white uppercase"
-          >
-            William Farre
-          </h1>
-          <div
-            ref={headerFooterRef}
-            className="flex flex-col flex-wrap items-center justify-between sm:flex-row"
-          >
-            <p className="font-title mb-4 text-sm sm:mb-0 sm:text-lg">
-              FRONTEND DEVELOPER
-            </p>
-            <Sns />
+        <header className="header">
+          <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
+            <li ref={skill1} className="skill">
+              FRONTEND
+            </li>
+            <li ref={skill2} className="skill">
+              BACKEND
+            </li>
+            <li ref={skill3} className="skill">
+              UI/UX
+            </li>
+          </ul>
+          <div className="title-wrapper relative text-center">
+            <h1
+              ref={mainTitleRef}
+              className="font-title tracking-wide text-white uppercase"
+            >
+              William Farre
+            </h1>
+            <div
+              ref={headerFooterRef}
+              className="flex flex-col flex-wrap items-center justify-between sm:flex-row"
+            >
+              <p className="font-title mb-4 text-sm sm:mb-0 sm:text-lg">
+                FRONTEND DEVELOPER
+              </p>
+              <Sns />
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main>
-        <About />
-        <Porfolio />
-      </main>
-    </div>
+        <main>
+          <About />
+          <Porfolio />
+          <Contact />
+        </main>
+      </div>
+    </ReactLenis>
   );
 };
 
