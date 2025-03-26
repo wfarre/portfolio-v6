@@ -120,7 +120,7 @@ const skills = [
       {
         title: "expressjs",
         // icon: express,
-        url: "/icons/expressjs.svg",
+        url: "/icons/express.svg",
       },
       {
         title: "fastapi",
