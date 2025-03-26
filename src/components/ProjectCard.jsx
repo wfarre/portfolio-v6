@@ -22,7 +22,11 @@ const ProjectCard = (props) => {
               <h3 className="mr-2 text-2xl lg:text-5xl">{props.title}</h3>
             </li>
             <li>
-              <a href={props.live} className="relative cursor-pointer">
+              <a
+                href={props.links.github}
+                target="_blank"
+                className="relative cursor-pointer"
+              >
                 <FontAwesomeIcon
                   className={
                     "text-2xl transition-all duration-300 hover:scale-110 hover:text-orange-500 md:text-3xl"
@@ -33,7 +37,11 @@ const ProjectCard = (props) => {
               </a>
             </li>
             <li>
-              <a href={props.github} className="cursor-pointer">
+              <a
+                href={props.links.live}
+                target="_blank"
+                className="cursor-pointer"
+              >
                 <FontAwesomeIcon
                   className={
                     "text-2xl transition-all duration-300 hover:scale-110 hover:text-orange-500 md:text-3xl"
@@ -54,7 +62,7 @@ const ProjectCard = (props) => {
               </ul>
             </li>
             <li className="text-xs font-normal lg:text-sm">
-              Completed in 2025
+              Completed in {props.date}
             </li>
           </ul>
         </li>

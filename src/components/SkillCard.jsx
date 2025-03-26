@@ -1,11 +1,6 @@
 import React from "react";
 
 const SkillCard = (props) => {
-  // useEffect(() => {
-  //   if (props.ref.current) {
-  //     gsap.to(props.ref.current, { backgroundColor: "white", opacity: 1 });
-  //   }
-  // }, []);
   return (
     <section
       ref={props.ref}
@@ -20,7 +15,7 @@ const SkillCard = (props) => {
             <li key={index} className="relative h-8 w-8 md:h-10 md:w-10">
               <img
                 className="absolute top-0 left-0 h-full w-full"
-                src={skill.icon}
+                src={skill.url}
                 alt={skill.title}
               />
             </li>

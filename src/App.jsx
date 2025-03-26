@@ -8,6 +8,8 @@ import About from "./About";
 import Porfolio from "./Porfolio";
 import Contact from "./Contact";
 import { ReactLenis } from "lenis/react";
+import Button from "./components/Button";
+import Footer from "./components/Footer";
 
 const App = () => {
   const skill1 = useRef();
@@ -15,9 +17,6 @@ const App = () => {
   const skill3 = useRef();
   const mainTitleRef = useRef();
   const headerFooterRef = useRef();
-  // const lenis = useLenis({ scroll }) => {
-  //   // called every scroll
-  // };
   const lenisRef = useRef();
 
   useEffect(() => {
@@ -97,14 +96,18 @@ const App = () => {
         <main>
           <About />
           <Porfolio />
+          <section>
+            <header className="flex flex-col items-center justify-center gap-4 bg-white py-6 text-center text-slate-950">
+              <h2 className="text-3xl font-bold italic lg:text-4xl">
+                Let's dream together!
+              </h2>
+              <Button buttonText={"Send Email"} type={"primary"} />
+            </header>
+          </section>
           <Contact />
         </main>
-        {/* <footer className="flex flex-col items-center bg-slate-950 pt-8">
-          <Sns />
-          <p className="mt-4 text-center text-xs">
-            Designed and coded by William Farré©2025
-          </p>
-        </footer> */}
+
+        <Footer />
       </div>
     </ReactLenis>
   );

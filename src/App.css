@@ -14,13 +14,11 @@
 }
 
 .title-wrapper {
-  /* margin-top: calc((400 / 1024) * 100vh); */
   margin-top: calc((350 / 1024) * 100vh);
 }
 
 h1 {
   font-size: calc((116 / 1440) * 100vw);
-  /* letter-spacing: calc((18 / 1440) * 100vw); */
 }
 
 .skill {

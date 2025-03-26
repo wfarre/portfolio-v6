@@ -1,94 +1,170 @@
 import React, { useRef } from "react";
-import Fisheye from "./assets/projects/fisheye.png";
-import ECommerce from "./assets/projects/ecommerce.png";
-import Kasa from "./assets/projects/kasa.png";
-import Petitsplats from "./assets/projects/petitsplats.png";
-import SpaceTourism from "./assets/projects/spacetourism.png";
+// import Fisheye from "./assets/projects/fisheye.png";
+// import ECommerce from "./assets/projects/ecommerce.png";
+// import Kasa from "./assets/projects/kasa.png";
+// import Petitsplats from "./assets/projects/petitsplats.png";
+// import SpaceTourism from "./assets/projects/spacetourism.png";
 import ProjectCard from "./components/ProjectCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import KasaImg from "/assets/images/projects/kasa.png";
+import PetitsPlatsImg from "/assets/images/projects/petitsplats.png";
+import SpaceTourismImg from "/assets/images/projects/spacetourism.png";
+import PortfolioImg from "/assets/images/projects/porfolio.png";
+import FisheyeImg from "/assets/images/projects/fisheye.png";
+import EcommerceImg from "/assets/images/projects/ecommerce.png";
+
+// const projects = [
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Fisheye,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Kasa,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: SpaceTourism,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: ECommerce,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: [
+//       "HTML",
+//       "CSS",
+//       "Javascript",
+//       "Sass",
+//       "Accessibility",
+//       "react",
+//       "jest",
+//     ],
+//     picture: Petitsplats,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Fisheye,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Kasa,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Kasa,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Fisheye,
+//   },
+//   {
+//     title: "fisheye",
+//     date: "2022",
+//     company: "OpenClassrooms",
+//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
+//     picture: Kasa,
+//   },
+// ];
 
 const projects = [
   {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Fisheye,
+    picture: PortfolioImg,
+    title: "Portfolio",
+    company: "frontend mentor",
+    date: "2024",
+    tags: ["Nextjs", "CSS"],
+    links: {
+      github: "https://github.com/wfarre/fake-portfolio/tree/main",
+      live: "https://fake-portfolio-jjpciyrpv-wfarres-projects.vercel.app/",
+    },
   },
   {
-    title: "fisheye",
+    picture: FisheyeImg,
+    title: "Fisheye",
     date: "2022",
     company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Kasa,
+    tags: ["HTML", "Javascript", "Sass", "Accessibility"],
+    links: {
+      github: "https://github.com/wfarre/Front-End-Fisheye/tree/main",
+      live: "https://front-end-fisheye.vercel.app/",
+    },
   },
   {
-    title: "fisheye",
+    picture: PetitsPlatsImg,
+    title: "Les petits plats",
     date: "2022",
     company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: SpaceTourism,
+    tags: ["HTML", "CSS", "Javascript"],
+    links: {
+      github: "https://github.com/wfarre/LesPetitsPlats-P7/tree/master",
+      live: "https://les-petits-plats-p7-qlvjnnn4u-wfarre.vercel.app/",
+    },
   },
   {
-    title: "fisheye",
+    picture: KasaImg,
+    title: "Kasa",
     date: "2022",
     company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: ECommerce,
+    tags: ["React", "Sass", "Typescript", "React-router"],
+    links: {
+      github: "https://github.com/wfarre/kasa-v2/tree/main",
+      live: "https://kasa-v2-tau.vercel.app/",
+    },
   },
   {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Sass",
-      "Accessibility",
-      "react",
-      "jest",
-    ],
-    picture: Petitsplats,
+    picture: SpaceTourismImg,
+    title: "Space Tourism",
+    date: "2023",
+    company: "frontend mentor",
+    tags: ["Nextjs", "Sass", "Typescript"],
+    links: {
+      github: "https://github.com/wfarre/space-tourism-app/tree/main",
+      live: "https://space-tourism-app-iota.vercel.app/technology",
+    },
   },
   {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Fisheye,
-  },
-  {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Kasa,
-  },
-  {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Kasa,
-  },
-  {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Fisheye,
-  },
-  {
-    title: "fisheye",
-    date: "2022",
-    company: "OpenClassrooms",
-    stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-    picture: Kasa,
+    picture: EcommerceImg,
+    title: "Ecommerce",
+    company: "frontend mentor",
+    date: "2023",
+    tags: ["Typescript", "CSS", "HTML"],
+    links: {
+      github: "https://github.com/wfarre/ecommerce/tree/main",
+      live: "https://ecommerce-jokg.vercel.app/",
+    },
   },
 ];
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Porfolio = () => {
@@ -111,7 +187,7 @@ const Porfolio = () => {
         pin: true,
         start: "top center",
         end: "+=1000",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
@@ -132,7 +208,6 @@ const Porfolio = () => {
       .to(sectionHeaderText.current, {
         x: () => innerWidth / 2 - 400,
         duration: 2,
-        // justifyItems: "flex-end",
         justifyContent: "flex-end",
       })
       .from(sectionMain.current, {
@@ -166,7 +241,8 @@ const Porfolio = () => {
               picture={project.picture}
               company={project.company}
               date={project.date}
-              stack={project.stack}
+              stack={project.tags}
+              links={project.links}
               index={index}
             />
           );

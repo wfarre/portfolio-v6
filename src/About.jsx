@@ -1,27 +1,4 @@
-import React, { useRef, useState } from "react";
-import {
-  css,
-  github,
-  html,
-  javascript,
-  nodejs,
-  react,
-  sass,
-  tailwindcss,
-  typescript,
-  svelte,
-  bootstrap,
-  french,
-  english,
-  chinese,
-  japanese,
-  express,
-  mongodb,
-  vscode,
-  figma,
-  python,
-  fastapi,
-} from "./assets/icons/index";
+import React, { useRef } from "react";
 import SkillCard from "./components/SkillCard";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
@@ -35,15 +12,18 @@ const skills = [
     list: [
       {
         title: "VSCode",
-        icon: vscode,
+        // icon: vscode,
+        url: "/icons/vscode.svg",
       },
       {
         title: "Figma",
-        icon: figma,
+        // icon: figma,
+        url: "/icons/figma.svg",
       },
       {
         title: "github",
-        icon: github,
+        // icon: github,
+        url: "/icons/github.svg",
       },
     ],
   },
@@ -53,19 +33,23 @@ const skills = [
     list: [
       {
         title: "French",
-        icon: french,
+        // icon: french,
+        url: "/icons/french.svg",
       },
       {
         title: "English",
-        icon: english,
+        // icon: english,
+        url: "/icons/english.svg",
       },
       {
         title: "Japanese",
-        icon: japanese,
+        // icon: japanese,
+        url: "/icons/japanese.svg",
       },
       {
         title: "Chinese",
-        icon: chinese,
+        // icon: chinese,
+        url: "/icons/chinese.svg",
       },
     ],
   },
@@ -75,39 +59,48 @@ const skills = [
     list: [
       {
         title: "html",
-        icon: html,
+        // icon: html,
+        url: "/icons/html.svg",
       },
       {
         title: "css",
-        icon: css,
+        // icon: css,
+        url: "/icons/css.svg",
       },
       {
         title: "javascript",
-        icon: javascript,
+        // icon: javascript,
+        url: "/icons/javascript.svg",
       },
       {
         title: "react",
-        icon: react,
+        // icon: react,
+        url: "/icons/react.svg",
       },
       {
         title: "svelte",
-        icon: svelte,
+        // icon: svelte,
+        url: "/icons/svelte.svg",
       },
       {
         title: "typescript",
-        icon: typescript,
+        // icon: typescript,
+        url: "/icons/typescript.svg",
       },
       {
         title: "sass",
-        icon: sass,
+        // icon: sass,
+        url: "/icons/sass.svg",
       },
       {
         title: "tailwindcss",
-        icon: tailwindcss,
+        // icon: tailwindcss,
+        url: "/icons/tailwindcss.svg",
       },
       {
         title: "bootstrap",
-        icon: bootstrap,
+        // icon: bootstrap,
+        url: "/icons/bootstrap.svg",
       },
     ],
   },
@@ -116,23 +109,28 @@ const skills = [
     list: [
       {
         title: "nodejs",
-        icon: nodejs,
+        // icon: nodejs,
+        url: "/icons/nodejs.svg",
       },
       {
         title: "python",
-        icon: python,
+        // icon: python,
+        url: "/icons/python.svg",
       },
       {
         title: "expressjs",
-        icon: express,
+        // icon: express,
+        url: "/icons/expressjs.svg",
       },
       {
         title: "fastapi",
-        icon: fastapi,
+        // icon: fastapi,
+        url: "/icons/fastapi.svg",
       },
       {
         title: "mongoDB",
-        icon: mongodb,
+        // icon: mongodb,
+        url: "/icons/mongodb.svg",
       },
     ],
   },
@@ -142,7 +140,6 @@ gsap.registerPlugin(Flip);
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const [isGrid, setIsGrid] = useState(true);
   const grid = useRef();
   const section = useRef();
 
@@ -155,11 +152,6 @@ const About = () => {
   const skillCard3 = useRef();
   const skillCard4 = useRef();
 
-  console.log(isGrid);
-  useState(() => {
-    setIsGrid(false);
-  }, []);
-
   useGSAP(() => {
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -170,7 +162,7 @@ const About = () => {
         end: "200% center",
         toggleActions: "restart pause pause pause",
         scrub: 0.5,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -216,13 +208,6 @@ const About = () => {
           stagger: 0.2,
         },
       );
-
-    // Flip.from(state, {
-    //   absolute: true, // uses position: absolute during the flip to work around flexbox challenges
-    //   duration: 1,
-    //   stagger: 0.5,
-    //   ease: "power1.Out",
-    // });
   }, []);
 
   return (
@@ -239,14 +224,6 @@ const About = () => {
           A little bit about me and my skills...
         </p>
       </div>
-
-      {/* <div
-        id="grid"
-        ref={grid}
-        className={`mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 ${
-          isGrid && "md:grid"
-        }`}
-      > */}
 
       <div
         id="grid"
