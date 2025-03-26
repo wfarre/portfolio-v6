@@ -132,7 +132,8 @@ const Porfolio = () => {
       .to(sectionHeaderText.current, {
         x: () => innerWidth / 2 - 400,
         duration: 2,
-        justifyItems: "flex-end",
+        // justifyItems: "flex-end",
+        justifyContent: "flex-end",
       })
       .from(sectionMain.current, {
         opacity: 0,
@@ -140,7 +141,10 @@ const Porfolio = () => {
       });
   });
   return (
-    <section className="relative min-h-[100vh] bg-slate-950 pb-40">
+    <section
+      id="portfolioSection"
+      className="relative min-h-[100vh] bg-slate-950 pb-40"
+    >
       <header
         ref={sectionHeader}
         className="px-desktop-responsive mb-10 inline-flex w-full justify-center overflow-y-hidden"

@@ -29,13 +29,16 @@ const Contact = () => {
   });
   return (
     <>
-      <section className="px-desktop-responsive mt-20 min-h-[100vh] text-center">
+      <section
+        id="contactSection"
+        className="px-desktop-responsive mt-20 min-h-[100vh] text-center"
+      >
         <header className="mb-12 pt-12 lg:pt-40">
           <h2 className="font-title text-5xl">Contact Information</h2>
         </header>
         <ul
           ref={contactCard}
-          className="flex flex-col justify-between gap-y-4 lg:flex-row"
+          className="flex flex-col justify-center gap-4 lg:flex-row"
         >
           <li ref={li1} className="rounded-xl bg-slate-700 px-8 py-5">
             <h3 className="font-bold">Address</h3>
@@ -52,14 +55,14 @@ const Contact = () => {
           </li>
         </ul>
       </section>
-      <section>
+      {/* <section>
         <header className="flex flex-col items-center justify-center gap-4 bg-white py-6 text-center text-slate-950">
           <h2 className="text-3xl font-bold italic lg:text-4xl">
             Let's dream together!
           </h2>
           <Button buttonText={"Send Email"} type={"primary"} />
         </header>
-      </section>
+      </section> */}
     </>
   );
 };

@@ -63,7 +63,7 @@ const App = () => {
       <div className="relative min-h-full scroll-smooth text-white">
         <Navbar />
 
-        <header className="header">
+        <header id="heroSection" className="header">
           <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
             <li ref={skill1} className="skill">
               FRONTEND
@@ -99,12 +99,12 @@ const App = () => {
           <Porfolio />
           <Contact />
         </main>
-        <footer className="flex flex-col items-center bg-slate-950 pt-8">
+        {/* <footer className="flex flex-col items-center bg-slate-950 pt-8">
           <Sns />
           <p className="mt-4 text-center text-xs">
             Designed and coded by William Farré©2025
           </p>
-        </footer>
+        </footer> */}
       </div>
     </ReactLenis>
   );

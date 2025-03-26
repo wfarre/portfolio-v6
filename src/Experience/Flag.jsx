@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
-import vertexShader from "../shaders/vertex.glsl";
-import fragmentShader from "../shaders/fragment.glsl";
+import vertexShader from "../shaders/flag/vertex.glsl";
+import fragmentShader from "../shaders/flag/fragment.glsl";
 import * as THREE from "three";
 import { TextureLoader } from "three";
 

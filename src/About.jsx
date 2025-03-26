@@ -144,9 +144,7 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const [isGrid, setIsGrid] = useState(true);
   const grid = useRef();
-  // const aboutHeader = useRef();
   const section = useRef();
-  const oletter = useRef();
 
   const sectionIntroText = useRef();
   const sectionIntroTextWrapper = useRef();
@@ -161,14 +159,6 @@ const About = () => {
   useState(() => {
     setIsGrid(false);
   }, []);
-
-  // ScrollTrigger.create({
-  //   trigger: uselessDiv.current,
-  //   start: "top center",
-  //   onEnter: () => setIsGrid(true),
-  //   onLeaveBack: () => setIsGrid(false),
-  //   markers: true,
-  // });
 
   useGSAP(() => {
     const timeline = gsap.timeline({
@@ -222,10 +212,6 @@ const About = () => {
         ],
         {
           opacity: 0,
-          // autoAlpha: 1,
-          // backgroundColor: "white",
-          // clearProps: "all",
-          // stagger: 0.5,
           duration: 0.5,
           stagger: 0.2,
         },
@@ -239,17 +225,6 @@ const About = () => {
     // });
   }, []);
 
-  // useGSAP(() => {
-  //   const state = Flip.getState(".item");
-
-  //   Flip.from(state, {
-  //     absolute: true, // uses position: absolute during the flip to work around flexbox challenges
-  //     duration: 1,
-  //     stagger: 0.5,
-  //     ease: "power1.Out",
-  //   });
-  // }, [isGrid]);
-
   return (
     <section
       id="aboutSection"
@@ -257,10 +232,10 @@ const About = () => {
       className="about-section px-desktop-responsive relative flex min-h-[100vh] flex-col items-center justify-center bg-slate-950 py-20"
     >
       <div
-        className="absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-x-hidden bg-slate-950"
+        className="px-desktop-responsive absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-x-hidden bg-slate-950"
         ref={sectionIntroTextWrapper}
       >
-        <p ref={sectionIntroText} className="text-5xl italic">
+        <p ref={sectionIntroText} className="text-2xl italic lg:text-5xl">
           A little bit about me and my skills...
         </p>
       </div>
