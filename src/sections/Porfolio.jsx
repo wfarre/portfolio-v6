@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 // import Kasa from "./assets/projects/kasa.png";
 // import Petitsplats from "./assets/projects/petitsplats.png";
 // import SpaceTourism from "./assets/projects/spacetourism.png";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";

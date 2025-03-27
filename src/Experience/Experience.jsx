@@ -66,13 +66,13 @@ const Experience = () => {
         ></primitive>
       </Float>
       <Float speed={0.1}>
-        <mesh ref={moonRef} scale={1.5} position={[7, 3, -4]}>
+        <mesh ref={moonRef} scale={1.5} position={[6, 2.5, -4]}>
           <sphereGeometry />
           <meshPhysicalMaterial
             map={texture}
             clearcoat={0}
-            clearcoatRoughness={1}
-            roughness={1}
+            clearcoatRoughness={0.5}
+            roughness={0.9}
             metalness={0.5}
           />
         </mesh>

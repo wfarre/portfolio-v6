@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Button from "./components/Button";
+import Button from "../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";

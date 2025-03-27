@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import SkillCard from "./components/SkillCard";
+import SkillCard from "../components/SkillCard";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Button from "./components/Button";
+import Button from "../components/Button";
 
 const skills = [
   {
