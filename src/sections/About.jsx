@@ -205,7 +205,7 @@ const About = () => {
       <div
         id="grid"
         ref={grid}
-        className={`mt-12 flex grid-cols-8 grid-rows-12 flex-col gap-4 bg-white md:grid`}
+        className={`mt-40 flex grid-cols-8 grid-rows-12 flex-col gap-4 bg-white md:grid`}
       >
         <header
           ref={skillCard0}

@@ -5,11 +5,11 @@ import React, { useRef, useState } from "react";
 const navLinks = [
   {
     title: "Home",
-    link: "/",
+    link: "#heroSection",
   },
   {
     title: "About",
-    link: "#aboutSection",
+    link: "#headerAbout",
   },
   {
     title: "Portfolio",
@@ -21,7 +21,7 @@ const navLinks = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [currentLink, setCurrentLink] = useState("home");
   const navbarRef = useRef();
   useGSAP(() => {
@@ -32,8 +32,13 @@ const Navbar = () => {
       delay: 1.2,
     });
   });
+
+  const handleLinkClick = (linkName) => {
+    setCurrentLink(linkName);
+    props.getCurrentLink(linkName);
+  };
   return (
-    <nav className="pt-6 md:pt-20" ref={navbarRef}>
+    <nav className="sticky top-0 z-40 pt-6 md:pt-15" ref={navbarRef}>
       <ul className="mx-auto flex w-fit justify-center gap-5 rounded-full bg-white/20 px-4 py-2 text-xs backdrop-blur-2xl md:gap-8 md:text-lg">
         {navLinks.map((link, index) => {
           return (
@@ -44,7 +49,7 @@ const Navbar = () => {
                     ? "text-white"
                     : "text-slate-300"
                 }`}
-                onClick={() => setCurrentLink(link.title)}
+                onClick={() => handleLinkClick(link.title)}
                 href={link.link}
               >
                 {link.title}
