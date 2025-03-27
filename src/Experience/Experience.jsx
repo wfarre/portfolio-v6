@@ -7,17 +7,29 @@ import { TextureLoader } from "three";
 import * as THREE from "three";
 
 const Experience = () => {
-  const texture = useTexture("/moon/moonmap1k.jpg");
+  const texture = useTexture("/assets/models/moon/moonmap1k.jpg");
   const scrollY = useScroll();
 
-  const rocket = useGLTF("/rocket/scene.gltf");
+  const rocket = useGLTF("/assets/models/rocket/scene.gltf");
   const particlesCount = 200;
   const positions = new Float32Array(particlesCount * 3);
   const [cursor, sizes] = useCursor();
-  const earthTexture = useLoader(TextureLoader, "earth/earthmap1k.jpg");
-  const cloudMap = useLoader(TextureLoader, "/earth/earthcloudmap.jpg");
-  const cloudAlpha = useLoader(TextureLoader, "/earth/earthcloudmap.jpg");
-  const earthNormal = useLoader(TextureLoader, "/earth/earthspec1k.jpg");
+  const earthTexture = useLoader(
+    TextureLoader,
+    "/assets/models/earth/earthmap1k.jpg",
+  );
+  const cloudMap = useLoader(
+    TextureLoader,
+    "/assets/models/earth/earthcloudmap.jpg",
+  );
+  const cloudAlpha = useLoader(
+    TextureLoader,
+    "/assets/models/earth/earthcloudmap.jpg",
+  );
+  const earthNormal = useLoader(
+    TextureLoader,
+    "/assets/models/earth/earthspec1k.jpg",
+  );
 
   for (let i = 0; i < particlesCount; i++) {
     const index = i * 3;

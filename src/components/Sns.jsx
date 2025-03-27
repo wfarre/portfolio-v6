@@ -32,17 +32,24 @@ const links = [
 
 const Sns = () => {
   return (
-    <ul className="relative flex justify-center md:justify-end gap-6">
+    <ul className="relative flex justify-center gap-6 md:justify-end">
       {links.map((link, index) => {
         return (
           <li key={"sns" + index}>
-            <a className="cursor-pointer" href={link.link} target="_blank">
+            <a
+              className="relative cursor-pointer"
+              href={link.link}
+              target="_blank"
+            >
               <FontAwesomeIcon
                 className={
-                  "text-2xl md:text-3xl hover:text-orange-500 hover:scale-110 transition-all duration-300"
+                  "text-2xl transition-all duration-300 hover:scale-110 hover:text-orange-500 md:text-3xl"
                 }
                 icon={link.icon}
               />
+              <span className="absolute top-0 left-0 scale-0">
+                {link.title}
+              </span>
             </a>
           </li>
         );
