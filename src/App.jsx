@@ -15,7 +15,7 @@ const App = () => {
   const lenisRef = useRef();
   const transition = useRef();
 
-  const [currentSection, setCurrentSection] = useState("home");
+  const [currentSection, setCurrentSection] = useState(null);
 
   useEffect(() => {
     function update(time) {
@@ -28,21 +28,23 @@ const App = () => {
   const timeline = gsap.timeline();
 
   useGSAP(() => {
-    timeline
-      .to(transition.current, {
-        scaleX: 1,
-        duration: 0.3,
-        transformOrigin: "right",
-      })
-      .to(transition.current, {
-        scaleX: 1,
-        duration: 0.5,
-      })
-      .to(transition.current, {
-        scaleX: 0,
-        transformOrigin: "left",
-        duration: 0.3,
-      });
+    if (currentSection) {
+      timeline
+        .to(transition.current, {
+          scaleX: 1,
+          duration: 0.3,
+          transformOrigin: "right",
+        })
+        .to(transition.current, {
+          scaleX: 1,
+          duration: 0.5,
+        })
+        .to(transition.current, {
+          scaleX: 0,
+          transformOrigin: "left",
+          duration: 0.3,
+        });
+    }
   }, [currentSection]);
 
   return (
