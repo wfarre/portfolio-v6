@@ -9,14 +9,14 @@ const ProjectCard = (props) => {
   return (
     <li
       className="group relative flex w-full items-end py-4 font-bold uppercase after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:content-[''] lg:h-18 lg:py-0"
-      tabIndex={props.index}
+      tabIndex="0"
     >
       <ul className="h-full lg:w-full lg:overflow-hidden">
         <li className="flex h-full transition-all duration-300 lg:items-center lg:px-6 lg:group-hover:translate-y-[-72px] lg:group-focus:translate-y-[-72px]">
           <h3 className="text-3xl lg:text-5xl">{props.company}</h3>
         </li>
 
-        <li className="flex h-full flex-col justify-between text-slate-200 transition-all duration-600 lg:w-full lg:flex-row lg:items-center lg:bg-white lg:px-6 lg:text-slate-950 lg:opacity-0 lg:group-hover:translate-y-[-72px] lg:group-hover:opacity-100 lg:group-focus:translate-y-[-72px] lg:group-focus:opacity-100">
+        <li className="flex h-full flex-col justify-between text-slate-200 transition-all duration-600 lg:w-full lg:flex-row lg:items-center lg:bg-white lg:px-6 lg:text-slate-950 lg:opacity-0 lg:group-focus-within:translate-y-[-72px] lg:group-focus-within:opacity-100 lg:group-hover:translate-y-[-72px] lg:group-hover:opacity-100 lg:group-focus:translate-y-[-72px] lg:group-focus:opacity-100">
           <ul className="flex items-center gap-4">
             <li>
               <h3 className="mr-2 text-2xl lg:text-5xl">{props.title}</h3>
@@ -25,7 +25,7 @@ const ProjectCard = (props) => {
               <a
                 href={props.links.github}
                 target="_blank"
-                className="relative cursor-pointer"
+                className="link relative cursor-pointer"
               >
                 <FontAwesomeIcon
                   className={

@@ -7,7 +7,7 @@ import About from "./sections/About";
 import Porfolio from "./sections/Porfolio";
 import Contact from "./sections/Contact";
 import { ReactLenis } from "lenis/react";
-import Button from "./components/Button";
+import Button from "./components/ButtonLink";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
 import CallToAction from "./sections/CallToAction";

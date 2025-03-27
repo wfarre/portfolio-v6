@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/Button";
+import ButtonLink from "../components/ButtonLink";
 
 const CallToAction = () => {
   return (
@@ -8,7 +8,11 @@ const CallToAction = () => {
         <h2 className="text-3xl font-bold italic lg:text-4xl">
           Let's dream together!
         </h2>
-        <Button buttonText={"Send Email"} type={"primary"} />
+        <ButtonLink
+          buttonText={"Send Email"}
+          type={"primary"}
+          link={"mailto:william.farre@gmail.com"}
+        />
       </header>
     </section>
   );

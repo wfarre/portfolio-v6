@@ -1,9 +1,4 @@
 import React, { useRef } from "react";
-// import Fisheye from "./assets/projects/fisheye.png";
-// import ECommerce from "./assets/projects/ecommerce.png";
-// import Kasa from "./assets/projects/kasa.png";
-// import Petitsplats from "./assets/projects/petitsplats.png";
-// import SpaceTourism from "./assets/projects/spacetourism.png";
 import ProjectCard from "../components/ProjectCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,90 +10,9 @@ import PortfolioImg from "/assets/images/projects/porfolio.png";
 import FisheyeImg from "/assets/images/projects/fisheye.png";
 import EcommerceImg from "/assets/images/projects/ecommerce.png";
 
-// const projects = [
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Fisheye,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Kasa,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: SpaceTourism,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: ECommerce,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: [
-//       "HTML",
-//       "CSS",
-//       "Javascript",
-//       "Sass",
-//       "Accessibility",
-//       "react",
-//       "jest",
-//     ],
-//     picture: Petitsplats,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Fisheye,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Kasa,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Kasa,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Fisheye,
-//   },
-//   {
-//     title: "fisheye",
-//     date: "2022",
-//     company: "OpenClassrooms",
-//     stack: ["HTML", "CSS", "Javascript", "Sass", "Accessibility"],
-//     picture: Kasa,
-//   },
-// ];
-
 const projects = [
   {
-    picture: PortfolioImg,
+    picture: "/assets/images/projects/porfolio.png",
     title: "Portfolio",
     company: "frontend mentor",
     date: "2024",
@@ -109,7 +23,7 @@ const projects = [
     },
   },
   {
-    picture: FisheyeImg,
+    picture: "/assets/images/projects/fisheye.png",
     title: "Fisheye",
     date: "2022",
     company: "OpenClassrooms",
@@ -120,7 +34,7 @@ const projects = [
     },
   },
   {
-    picture: PetitsPlatsImg,
+    picture: "/assets/images/projects/petitsplats.png",
     title: "Les petits plats",
     date: "2022",
     company: "OpenClassrooms",
@@ -131,7 +45,7 @@ const projects = [
     },
   },
   {
-    picture: KasaImg,
+    picture: "/assets/images/projects/kasa.png",
     title: "Kasa",
     date: "2022",
     company: "OpenClassrooms",
@@ -142,7 +56,7 @@ const projects = [
     },
   },
   {
-    picture: SpaceTourismImg,
+    picture: "/assets/images/projects/spacetourism.png",
     title: "Space Tourism",
     date: "2023",
     company: "frontend mentor",
@@ -153,7 +67,7 @@ const projects = [
     },
   },
   {
-    picture: EcommerceImg,
+    picture: "/assets/images/projects/ecommerce.png",
     title: "Ecommerce",
     company: "frontend mentor",
     date: "2023",
@@ -161,6 +75,28 @@ const projects = [
     links: {
       github: "https://github.com/wfarre/ecommerce/tree/main",
       live: "https://ecommerce-jokg.vercel.app/",
+    },
+  },
+  {
+    picture: "/assets/images/projects/portfolio2024.png",
+    title: "Portfolio 2024",
+    company: "personal",
+    date: "2024",
+    tags: ["Typescript", "CSS", "HTML", "Next.js", "materialUI"],
+    links: {
+      github: "https://github.com/wfarre/portfolio-app-v4/tree/main",
+      live: "https://william-portfolio-psi.vercel.app/",
+    },
+  },
+  {
+    picture: "/assets/images/projects/portfolio2022.png",
+    title: "Portfolio 2022",
+    company: "personal",
+    date: "2022",
+    tags: ["React", "CSS", "HTML", "Javascript"],
+    links: {
+      github: "https://github.com/wfarre/williamdev-portfolio-app/tree/master",
+      live: "https://williamdev-portfolio-app.vercel.app/",
     },
   },
 ];
@@ -174,11 +110,6 @@ const Porfolio = () => {
   const sectionTitleAfter = useRef();
   const sectionMain = useRef();
   const sectionHeader = useRef();
-
-  // ScrollSmoother.create({
-  //   effects: true,
-  //   smooth: 2,
-  // });
 
   useGSAP(() => {
     const timeline = gsap.timeline({

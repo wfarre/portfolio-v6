@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Button from "../components/Button";
+import ButtonLink from "../components/ButtonLink";
 
 const skills = [
   {
@@ -12,17 +12,14 @@ const skills = [
     list: [
       {
         title: "VSCode",
-        // icon: vscode,
         url: "/assets/images/icons/vscode.svg",
       },
       {
         title: "Figma",
-        // icon: figma,
         url: "/assets/images/icons/figma.svg",
       },
       {
         title: "github",
-        // icon: github,
         url: "/assets/images/icons/github.svg",
       },
     ],
@@ -33,22 +30,18 @@ const skills = [
     list: [
       {
         title: "French",
-        // icon: french,
         url: "/assets/images/icons/french.svg",
       },
       {
         title: "English",
-        // icon: english,
         url: "/assets/images/icons/english.svg",
       },
       {
         title: "Japanese",
-        // icon: japanese,
         url: "/assets/images/icons/japanese.svg",
       },
       {
         title: "Chinese",
-        // icon: chinese,
         url: "/assets/images/icons/chinese.svg",
       },
     ],
@@ -59,47 +52,38 @@ const skills = [
     list: [
       {
         title: "html",
-        // icon: html,
         url: "/assets/images/icons/html.svg",
       },
       {
         title: "css",
-        // icon: css,
         url: "/assets/images/icons/css.svg",
       },
       {
         title: "javascript",
-        // icon: javascript,
         url: "/assets/images/icons/javascript.svg",
       },
       {
         title: "react",
-        // icon: react,
         url: "/assets/images/icons/react.svg",
       },
       {
         title: "svelte",
-        // icon: svelte,
         url: "/assets/images/icons/svelte.svg",
       },
       {
         title: "typescript",
-        // icon: typescript,
         url: "/assets/images/icons/typescript.svg",
       },
       {
         title: "sass",
-        // icon: sass,
         url: "/assets/images/icons/sass.svg",
       },
       {
         title: "tailwindcss",
-        // icon: tailwindcss,
         url: "/assets/images/icons/tailwindcss.svg",
       },
       {
         title: "bootstrap",
-        // icon: bootstrap,
         url: "/assets/images/icons/bootstrap.svg",
       },
     ],
@@ -109,27 +93,22 @@ const skills = [
     list: [
       {
         title: "nodejs",
-        // icon: nodejs,
         url: "/assets/images/icons/nodejs.svg",
       },
       {
         title: "python",
-        // icon: python,
         url: "/assets/images/icons/python.svg",
       },
       {
         title: "expressjs",
-        // icon: express,
         url: "/assets/images/icons/express.svg",
       },
       {
         title: "fastapi",
-        // icon: fastapi,
         url: "/assets/images/icons/fastapi.svg",
       },
       {
         title: "mongoDB",
-        // icon: mongodb,
         url: "/assets/images/icons/mongodb.svg",
       },
     ],
@@ -142,10 +121,8 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const grid = useRef();
   const section = useRef();
-
   const sectionIntroText = useRef();
   const sectionIntroTextWrapper = useRef();
-
   const skillCard0 = useRef();
   const skillCard1 = useRef();
   const skillCard2 = useRef();
@@ -244,7 +221,11 @@ const About = () => {
             specialized in frontend developer, I am currently learning backend
             development and UI/UX design.
           </p>
-          <Button buttonText={"Dowload CV"} type={"primary"} />
+          <ButtonLink
+            link={"/assets/resume_WF.pdf"}
+            Text={"Dowload CV"}
+            type={"primary"}
+          />
         </header>
 
         <SkillCard
