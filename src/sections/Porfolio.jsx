@@ -12,6 +12,18 @@ import EcommerceImg from "/assets/images/projects/ecommerce.png";
 
 const projects = [
   {
+    picture: "/assets/images/projects/extensions.png",
+    title: "Browser Extensions List",
+    company: "Frontend mentor",
+    date: "2025",
+    tags: ["Vue", "Vue-router", "Pinia", "TailwindCSS"],
+    links: {
+      github:
+        "https://github.com/wfarre/browser-extension-manager-UI/tree/main",
+      live: "https://browser-extension-manager-ui-rho.vercel.app/",
+    },
+  },
+  {
     picture: "/assets/images/projects/porfolio.png",
     title: "Portfolio",
     company: "frontend mentor",
