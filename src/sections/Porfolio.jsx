@@ -3,12 +3,6 @@ import ProjectCard from "../components/ProjectCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import KasaImg from "/assets/images/projects/kasa.png";
-import PetitsPlatsImg from "/assets/images/projects/petitsplats.png";
-import SpaceTourismImg from "/assets/images/projects/spacetourism.png";
-import PortfolioImg from "/assets/images/projects/porfolio.png";
-import FisheyeImg from "/assets/images/projects/fisheye.png";
-import EcommerceImg from "/assets/images/projects/ecommerce.png";
 
 const projects = [
   {
@@ -72,10 +66,10 @@ const projects = [
     title: "Space Tourism",
     date: "2023",
     company: "frontend mentor",
-    tags: ["Nextjs", "Sass", "Typescript"],
+    tags: ["Nextjs", "TailwindCSS", "Typescript"],
     links: {
-      github: "https://github.com/wfarre/space-tourism-app/tree/main",
-      live: "https://space-tourism-app-iota.vercel.app/technology",
+      github: "https://github.com/wfarre/space-tourism-next/tree/main",
+      live: "https://space-tourism-next-umber.vercel.app/",
     },
   },
   {
