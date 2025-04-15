@@ -2,9 +2,9 @@ import React, { Suspense, useRef } from "react";
 const Sns = React.lazy(() => import("../components/ui/Sns"));
 
 const Hero = () => {
-  // const skill1 = useRef();
-  // const skill2 = useRef();
-  // const skill3 = useRef();
+  const skill1 = useRef();
+  const skill2 = useRef();
+  const skill3 = useRef();
   // const mainTitleRef = useRef();
   // const headerFooterRef = useRef();
 
@@ -37,7 +37,7 @@ const Hero = () => {
   // });
   return (
     <header id="heroSection" className="header">
-      {/* <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
+      <ul className="font-title mt-25 flex justify-between gap-2 text-sm sm:mt-20 sm:flex-col sm:text-lg">
         <li ref={skill1} className="skill">
           FRONTEND
         </li>
@@ -47,15 +47,14 @@ const Hero = () => {
         <li ref={skill3} className="skill">
           UI/UX
         </li>
-      </ul> */}
+      </ul>
       <div className="title-wrapper relative mx-auto max-w-[1440px] text-center">
         <h1
           // ref={mainTitleRef}
           // className="font-title text-[calc((116_/_1440)_*_100vw)] leading-none tracking-wide text-white uppercase 2xl:text-[144px]"
-          className="leading-none tracking-wide text-white uppercase"
+          className="font-title leading-none tracking-wide text-white uppercase"
           style={{
             fontSize: "clamp(2.5rem, 8vw, 6rem)",
-            fontFamily: "sans-serif",
           }}
         >
           William Farre
@@ -64,9 +63,9 @@ const Hero = () => {
           // ref={headerFooterRef}
           className="mt-2 flex flex-col flex-wrap items-center justify-between sm:flex-row"
         >
-          {/* <h2 className="font-title mb-4 text-sm sm:mb-0 sm:text-lg">
+          <h2 className="font-title mb-4 text-sm sm:mb-0 sm:text-lg">
             FRONTEND DEVELOPER | REACT
-          </h2> */}
+          </h2>
           <Suspense fallback={null}>
             <Sns />
           </Suspense>
