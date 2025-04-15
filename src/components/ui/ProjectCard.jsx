@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-import Flag from "../Experience/Flag";
+import Flag from "../../Experience/Flag";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";

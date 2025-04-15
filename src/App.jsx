@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import "./App.css";
 import gsap from "gsap";
 import About from "./sections/About";
 import Porfolio from "./sections/Porfolio";
 import Contact from "./sections/Contact";
 import { ReactLenis } from "lenis/react";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 import Hero from "./sections/Hero";
 import CallToAction from "./sections/CallToAction";
 import { useGSAP } from "@gsap/react";
+import SectionTransition from "./components/layout/SectionTransition";
 
 const App = () => {
   const lenisRef = useRef();
@@ -49,23 +50,16 @@ const App = () => {
 
   return (
     <ReactLenis root>
-      <div
-        ref={transition}
-        className={`fixed top-[50%] left-0 z-50 flex h-[95vh] w-[100vw] origin-right translate-y-[-50%] scale-x-0 items-center justify-center bg-white`}
-      >
-        <h2 className="font-title text-5xl text-slate-950 uppercase">
-          {currentSection}
-        </h2>
-      </div>
-      <div className="relative min-h-full scroll-smooth text-white">
+      <SectionTransition ref={transition} currentSection={currentSection} />
+      <div className="relative mx-auto min-h-full scroll-smooth text-white">
         <Navbar getCurrentLink={(link) => setCurrentSection(link)} />
         <Hero />
         <main>
           <About />
           <Porfolio />
           <Contact />
-          <CallToAction />
         </main>
+        <CallToAction />
         <Footer />
       </div>
     </ReactLenis>

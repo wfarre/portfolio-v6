@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  /* --font-title: "Audiowide", sans-serif;
-  --font-primary: "Raleway", sans-serif; */
+  --font-title: "Audiowide", sans-serif;
+  --font-primary: "Raleway", sans-serif;
 
   --padding-desktop-responsive: calc((164 / 1440) * 100vw);
 }
@@ -14,10 +14,6 @@
 .title-wrapper {
   margin-top: calc((350 / 1024) * 100vh);
 }
-
-/* h1 {
-  font-size: calc((116 / 1440) * 100vw);
-} */
 
 .skill {
   position: relative;

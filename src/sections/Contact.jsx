@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Button from "../components/ButtonLink";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -34,7 +33,7 @@ const Contact = () => {
         className="px-desktop-responsive mt-20 min-h-[100vh] text-center"
       >
         <header className="mb-12 pt-12 lg:pt-40">
-          <h2 className="font-title text-5xl">Contact Information</h2>
+          <h2 className="font-title text-5xl uppercase">Contact Information</h2>
         </header>
         <ul
           ref={contactCard}

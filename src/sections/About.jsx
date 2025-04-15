@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import SkillCard from "../components/SkillCard";
+import SkillCard from "../components/ui/SkillCard";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import ButtonLink from "../components/ButtonLink";
+import ButtonLink from "../components/ui/ButtonLink";
 
 const skills = [
   {
@@ -166,7 +166,6 @@ const About = () => {
           autoAlpha: 1,
           backgroundColor: "white",
           duration: 5,
-
           clearProps: "all",
           stagger: 0.5,
         },

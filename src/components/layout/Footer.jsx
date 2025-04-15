@@ -1,5 +1,5 @@
 import React from "react";
-import Sns from "./Sns";
+import Sns from "../ui/Sns";
 
 const Footer = () => {
   return (

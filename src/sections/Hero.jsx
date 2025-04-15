@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { Suspense, useRef } from "react";
-import Sns from "../components/Sns";
+import React, { useRef } from "react";
+import Sns from "../components/ui/Sns";
 
 const Hero = () => {
   const skill1 = useRef();
@@ -50,11 +50,10 @@ const Hero = () => {
           UI/UX
         </li>
       </ul>
-      <div className="title-wrapper relative text-center">
+      <div className="title-wrapper relative mx-auto max-w-[1440px] text-center">
         <h1
           ref={mainTitleRef}
-          // className="font-title leading-none tracking-wide text-white uppercase"
-          // className="font-title leading-none tracking-wide text-white uppercase"
+          className="font-title text-[calc((116_/_1440)_*_100vw)] leading-none tracking-wide text-white uppercase 2xl:text-[144px]"
         >
           William Farre
         </h1>

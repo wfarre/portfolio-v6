@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/ui/ProjectCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -124,7 +124,6 @@ const Porfolio = () => {
         pin: true,
         start: "top center",
         end: "+=1000",
-        // markers: true,
         scrub: true,
       },
     });

@@ -1,11 +1,11 @@
 import React from "react";
-import ButtonLink from "../components/ButtonLink";
+import ButtonLink from "../components/ui/ButtonLink";
 
 const CallToAction = () => {
   return (
     <section>
       <header className="flex flex-col items-center justify-center gap-4 bg-white py-6 text-center text-slate-950">
-        <h2 className="text-3xl font-bold italic lg:text-4xl">
+        <h2 className="text-3xl font-bold italic lg:text-5xl">
           Let's dream together!
         </h2>
         <ButtonLink

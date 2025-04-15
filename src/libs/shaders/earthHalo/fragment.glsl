@@ -1,7 +1,3 @@
-
-// uniform vec3 color1;
-// uniform vec3 color2;
-
 varying vec3 uColor1;
 varying vec3 uColor2;
   
