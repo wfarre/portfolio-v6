@@ -1,35 +1,18 @@
-import { Float, Sparkles, useGLTF, useTexture } from "@react-three/drei";
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
+import { Float, Sparkles } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef } from "react";
 import { useCursor } from "../libs/hooks/useCursor";
 import { useScroll } from "../libs/hooks/useScroll";
-import { TextureLoader } from "three";
-import * as THREE from "three";
+
+import Earth from "./Earth";
+import Rocket from "./Rocket";
+import Moon from "./Moon";
 
 const Experience = () => {
-  const texture = useTexture("/assets/models/moon/moonmap1k.jpg");
   const scrollY = useScroll();
-
-  const rocket = useGLTF("/assets/models/rocket/scene.gltf");
   const particlesCount = 200;
   const positions = new Float32Array(particlesCount * 3);
   const [cursor, sizes] = useCursor();
-  const earthTexture = useLoader(
-    TextureLoader,
-    "/assets/models/earth/earthmap1k.jpg",
-  );
-  const cloudMap = useLoader(
-    TextureLoader,
-    "/assets/models/earth/earthcloudmap.jpg",
-  );
-  const cloudAlpha = useLoader(
-    TextureLoader,
-    "/assets/models/earth/earthcloudmap.jpg",
-  );
-  const earthNormal = useLoader(
-    TextureLoader,
-    "/assets/models/earth/earthspec1k.jpg",
-  );
 
   for (let i = 0; i < particlesCount; i++) {
     const index = i * 3;
@@ -57,62 +40,12 @@ const Experience = () => {
     <>
       <Sparkles size={4} scale={[20, 20, 20]} speed={0.1} ref={stars} />
       <Float speed={1}>
-        <primitive
-          object={rocket.scene}
-          scale={0.4}
-          position-x={100}
-          position={[0, 1, -5]}
-          rotation-z={Math.PI * -0.35}
-        ></primitive>
+        <Rocket />
       </Float>
       <Float speed={0.1}>
-        <mesh ref={moonRef} scale={1.5} position={[6, 2.5, -4]}>
-          <sphereGeometry />
-          <meshPhysicalMaterial
-            map={texture}
-            clearcoat={0}
-            clearcoatRoughness={0.5}
-            roughness={0.9}
-            metalness={0.5}
-          />
-        </mesh>
+        <Moon ref={moonRef} scale={1.5} position={[6, 2.5, -4]} />
       </Float>
-
-      <group ref={earthRef} position={[0, -2, 2]} scale={1.5}>
-        <mesh scale={1.01}>
-          <sphereGeometry />
-          <meshStandardMaterial
-            map={cloudMap}
-            transparent={true}
-            opacity={0.8}
-            blending={THREE.AdditiveBlending}
-            alphaMap={cloudAlpha}
-          />
-        </mesh>
-        <mesh scale={1.01}>
-          <sphereGeometry />
-          <meshStandardMaterial
-            map={cloudMap}
-            transparent={true}
-            opacity={0.8}
-            blending={THREE.AdditiveBlending}
-            alphaMap={cloudAlpha}
-          />
-        </mesh>
-        <mesh>
-          <sphereGeometry />
-          <meshPhysicalMaterial
-            map={earthTexture}
-            alphaMap={earthNormal}
-            alph
-            clearcoat={0}
-            clearcoatRoughness={0.1}
-            roughness={0.2}
-            metalness={0.1}
-          />
-        </mesh>
-        <pointLight size={(1, 1, 1)} intensity={100} />
-      </group>
+      <Earth ref={earthRef} position={[0, -2, 2]} scale={1.5} />
     </>
   );
 };

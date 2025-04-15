@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import Sns from "../components/Sns";
 
 const Hero = () => {
@@ -53,7 +53,8 @@ const Hero = () => {
       <div className="title-wrapper relative text-center">
         <h1
           ref={mainTitleRef}
-          className="font-title leading-none tracking-wide text-white uppercase"
+          // className="font-title leading-none tracking-wide text-white uppercase"
+          // className="font-title leading-none tracking-wide text-white uppercase"
         >
           William Farre
         </h1>
