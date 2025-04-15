@@ -7,8 +7,8 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <div className="fixed top-0 left-0 h-[100vh] w-[100vw]">
+  <>
+    {/* <div className="fixed top-0 left-0 h-[100vh] w-[100vw]">
       <Canvas className="h-full w-full" camera={[1, 1, 1]}>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
@@ -26,7 +26,7 @@ createRoot(document.getElementById("root")).render(
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
         </EffectComposer>
       </Canvas>
-    </div>
+    </div> */}
     <App />
-  </StrictMode>,
+  </>,
 );

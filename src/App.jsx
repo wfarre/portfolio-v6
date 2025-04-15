@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import "./App.css";
 import gsap from "gsap";
