@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
+.container > * {
+  margin-inline: auto;
+  max-width: min(1110px, calc(100vw - 2 * ((165 / 1440) * 100vw)));
+}
+
 @theme {
   --font-title: "Audiowide", sans-serif;
   --font-primary: "Raleway", sans-serif;
 
-  --padding-desktop-responsive: calc((164 / 1440) * 100vw);
+  /* --padding-desktop-responsive: calc((164 / 1440) * 100vw); */
 }
 
-.header {
-  margin: 0 calc((164 / 1440) * 100vw);
+.no-max-width {
+  max-width: none;
 }
+
+/* .header {
+  margin: 0 calc((164 / 1440) * 100vw);
+} */
 
 .title-wrapper {
   margin-top: calc((350 / 1024) * 100vh);

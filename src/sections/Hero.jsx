@@ -48,7 +48,7 @@ const Hero = () => {
           UI/UX
         </li>
       </ul>
-      <div className="title-wrapper relative mx-auto max-w-[1440px] text-center">
+      <div className="title-wrapper relative mx-auto w-fit max-w-[1110px] text-center">
         <h1
           // ref={mainTitleRef}
           // className="font-title text-[calc((116_/_1440)_*_100vw)] leading-none tracking-wide text-white uppercase 2xl:text-[144px]"

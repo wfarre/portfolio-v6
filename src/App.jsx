@@ -51,7 +51,7 @@ const App = () => {
   return (
     <ReactLenis root>
       <SectionTransition ref={transition} currentSection={currentSection} />
-      <div className="relative mx-auto min-h-full scroll-smooth text-white">
+      <div className="relative container mx-auto min-h-full scroll-smooth text-white">
         <Navbar getCurrentLink={(link) => setCurrentSection(link)} />
         <Hero />
         <main>
